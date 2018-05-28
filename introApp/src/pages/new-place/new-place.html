@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Lieux essentiels</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <form (ngSubmit)="savePlace(f)" #f="ngForm">
+    <ion-item>
+      <ion-label>Titre</ion-label>
+      <ion-input required minlength="3" type="text" name="place" ngModel></ion-input>
+    </ion-item>
+    <button ion-button type="submit" [disabled]=!f.valid>Enregistrer</button>
+  </form>
+
+  <button ion-button (click)="locate()">Localisation</button>
+  <p>Latitude: {{coords.lat}}</p>
+  <p>Longitude: {{coords.long}}</p>
+
+</ion-content>

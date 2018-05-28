@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Application Ionic d'Intro
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+{{message}}
+<button ion-button (click)="testBtn()">Test</button>
+<button ion-button (click)="goToNewPlace()">Ajouter un lieu</button>
+
+<h2>Lieux enregistrés</h2>
+<ion-list>
+  <ion-item *ngFor="let place of places">
+    <ion-thumbnail item-start>
+      <img src="assets/imgs/logo.png">
+    </ion-thumbnail>
+    <h2>{{place}}</h2>
+    <p>Lieu fantastique !</p>
+    <button ion-button item-end>Détails</button>
+  </ion-item>
+</ion-list>
+
+</ion-content>
